@@ -54,18 +54,18 @@ namespace Officemancer
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "MRM API Documentation", Version = "v1" });
-                c.DescribeAllEnumsAsStrings();
-                // Set the comments path for the swagger json and ui.
-                var basePath = PlatformServices.Default.Application.ApplicationBasePath;
-                var xmlPath = Path.Combine(basePath, "MrmApi.xml");
-                c.IncludeXmlComments(xmlPath);
-                //xmlPath = Path.Combine(basePath, "MrmApi.DomainObjects.xml");
-                c.IncludeXmlComments(xmlPath);
-            });
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "MRM API Documentation", Version = "v1" });
+            //    c.DescribeAllEnumsAsStrings();
+            //    // Set the comments path for the swagger json and ui.
+            //    var basePath = PlatformServices.Default.Application.ApplicationBasePath;
+            //    var xmlPath = Path.Combine(basePath, "MrmApi.xml");
+            //    c.IncludeXmlComments(xmlPath);
+            //    //xmlPath = Path.Combine(basePath, "MrmApi.DomainObjects.xml");
+            //    c.IncludeXmlComments(xmlPath);
+            //});
+            //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
@@ -74,7 +74,7 @@ namespace Officemancer
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            this.Kernel = this.RegisterApplicationComponents(app);
+            //this.Kernel = this.RegisterApplicationComponents(app);
 
             if (env.IsDevelopment())
             {
@@ -99,25 +99,26 @@ namespace Officemancer
             });
         }
 
-        private IKernel RegisterApplicationComponents(IApplicationBuilder app)
-        {
-            var kernel = new StandardKernel();
-            //foreach (var ctrlType in app.GetControllerTypes())
-            //{
-            //    kernel.Bind(ctrlType).ToSelf().InScope(RequestScope);
-            //}
+        //private IKernel RegisterApplicationComponents(IApplicationBuilder app)
+        //{
+        //    var kernel = new StandardKernel();
+        //    //foreach (var ctrlType in app.GetControllerTypes())
+        //    //{
+        //    //    kernel.Bind(ctrlType).ToSelf().InScope(RequestScope);
+        //    //}
 
-            //kernel.Load(new CommandBindings(), new ConvertBindings());
+        //    //kernel.Load(new CommandBindings(), new ConvertBindings());
 
-            var platinaCustomContextOptions = GetDbContextOPtions<T>(Configuration["MancerDBConnectionString"]);
+        //    var mancerConnection = Configuration["MancerDBConnectionString"];
+        //    Kernel.Bind
 
-        }
+        //}
 
-        private DbContextOptions<T> GetDbContextOPtions<T>(string connectionString) where T : DbContext
-        {
-            var optionsBuilder = new DbContextOptionsBuilder<T>();
-            optionsBuilder.UseSqlServer(connectionString);
-            return optionsBuilder.Options;
-        }
+        //private DbContextOptions<T> GetDbContextOPtions<T>(string connectionString) where T : DbContext
+        //{
+        //    var optionsBuilder = new DbContextOptionsBuilder<T>();
+        //    optionsBuilder.UseSqlServer(connectionString);
+        //    return optionsBuilder.Options;
+        //}
     }
 }

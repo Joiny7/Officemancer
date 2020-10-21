@@ -31,3 +31,4 @@ E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.dll
 E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.pdb
 E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.genruntimeconfig.cache
 E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.csproj.CopyComplete
+E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.csproj.CoreCompileInputs.cache
