@@ -17,6 +17,14 @@ namespace Officemancer.Services
             _context = context;
         }
 
+        public List<User> GetUsers(int id)
+        {
+            var companyid = _context.Users.Where(x => x.UserID == id).Select(y => y.CompanyID).FirstOrDefault();
+            var users = _context.Users.Where(x => x.CompanyID == companyid).ToList();
+            return users;
+        }
+
+
         public bool Login(string username, string password)
         {
             var User = _context.Logins.Where(x => x.UserName == username && x.Password == password).FirstOrDefault();

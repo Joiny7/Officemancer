@@ -17,6 +17,14 @@ namespace Officemancer.Controllers
             _userservice = userservice;
         }
 
+        [HttpGet("api/Users/GetUsers")]
+        public IActionResult GetUsers(int UserId)
+        {
+            var resp = _userservice.GetUsers(UserId);
+            return Ok(resp);
+        }
+
+
         [HttpPost("api/User/Login")]
         public IActionResult Login(string username, string password)
         {

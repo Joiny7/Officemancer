@@ -13,5 +13,6 @@ namespace Officemancer.Services
         CalenderDto GetMonth(int officeid, int month, int? year);
         Office GetOffice(int officeid);
         string CreateReservation(Reservation res);
+        List<User> GetUsers(int id);
     }
 }
