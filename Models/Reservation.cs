@@ -14,6 +14,6 @@ namespace Officemancer.Models
         public int BookerID { get; set; }
         public DateTime Date { get; set; }
         [NotMapped]
-        public List<User> Mancers { get; set; }
+        public List<int> MancerIds { get; set; }
     }
 }

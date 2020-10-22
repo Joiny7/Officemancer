@@ -15,6 +15,39 @@ namespace Officemancer.Services
             _context = context;
         }
 
+
+        public string AddOffice(string OfficeName, int CompanyID, int TotalCapacity, string BannerMessage)
+        {
+            Office o = new Office()
+            {
+                OfficeName = OfficeName,
+                CompanyID = CompanyID,
+                TotalCapacity = TotalCapacity,
+                BannerMessage = BannerMessage
+            };
+
+            _context.Offices.Add(o);
+            _context.SaveChanges();
+            return "Office successfully added.";
+        }
+
+        public string UpdateOffice(int OfficeId, string OfficeName, int TotalCapacity, string BannerMessage)
+        {
+            var f2 = _context.Offices.Where(x => x.OfficeID == OfficeId).FirstOrDefault();
+            f2.BannerMessage = BannerMessage;
+            f2.OfficeName = OfficeName;
+            f2.TotalCapacity = TotalCapacity;
+            _context.Update(f2);
+            _context.SaveChanges();
+            return "Office successfully updated.";
+        }
+
+        public List<User> GetUsers(int companyid)
+        {
+            var users = _context.Users.Where(x => x.CompanyID == companyid).ToList();
+            return users;
+        }
+
         public string SetBannerMessage(int userid, string message)
         {
             var user = _context.Users.Where(x => x.UserID == userid).FirstOrDefault();
@@ -31,30 +64,30 @@ namespace Officemancer.Services
                 return "You are not an admin.";
         }
 
-        public string UpdateFloor(Floor f)
+        public string UpdateFloor(int floorid, string newName, int newMax, bool newBookable)
         {
-            if (f == null)
-                return "invalid values.";
-            else
-            {
-                var f2 = _context.Floors.Where(x => x.FloorID == f.FloorID).FirstOrDefault();
-                f2 = f;
-                _context.Update(f2);
-                _context.SaveChanges();
-                return "Floor successfully updated.";
-            }
+            var f2 = _context.Floors.Where(x => x.FloorID == floorid).FirstOrDefault();
+            f2.FloorName = newName;
+            f2.MaxCapacity = newMax;
+            f2.Bookable = newBookable;
+            _context.Update(f2);
+            _context.SaveChanges();
+            return "Floor successfully updated.";
         }
 
-        public string AddFloor(Floor f)
+        public string AddFloor(string name, int officeId, int max, bool bookable)
         {
-            if (f == null)
-                return "invalid values.";
-            else
+            Floor f = new Floor()
             {
-                _context.Floors.Add(f);
-                _context.SaveChanges();
-                return "Fllor successfully added.";
-            }
+                FloorName = name,
+                OfficeID = officeId,
+                MaxCapacity = max, 
+                Bookable = bookable
+            };
+
+            _context.Floors.Add(f);
+            _context.SaveChanges();
+            return "Floor successfully added.";
         }
 
         public bool AdminCheck(int userid)

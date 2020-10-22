@@ -18,12 +18,48 @@ namespace Officemancer.Controllers
             _adminservice = adminservice;
         }
 
-        [HttpPost("api/Admin/SetBannerMessage")]
-        public IActionResult SetBannerMessage(int userid, string message)
+        [HttpGet("api/Admin/GetUsers")]
+        public IActionResult GetUsers(int AdminID, int companyid)
         {
-            if (_adminservice.AdminCheck(userid))
+            if (_adminservice.AdminCheck(AdminID))
             {
-                var resp = _adminservice.SetBannerMessage(userid, message);
+                var resp = _adminservice.GetUsers(companyid);
+                return Ok(resp);
+            }
+            else return
+                    BadRequest();
+        }
+
+        [HttpPost("api/Admin/SetBannerMessage")]
+        public IActionResult SetBannerMessage(int AdminID, string message)
+        {
+            if (_adminservice.AdminCheck(AdminID))
+            {
+                var resp = _adminservice.SetBannerMessage(AdminID, message);
+                return Ok(resp);
+            }
+            else return
+                    BadRequest();
+        }
+
+        [HttpPost("api/Admin/AddOffice")]
+        public IActionResult AddOffice(int AdminID, string OfficeName, int CompanyID, int TotalCapacity, string BannerMessage)
+        {
+            if (_adminservice.AdminCheck(AdminID))
+            {
+                var resp = _adminservice.AddOffice(OfficeName, CompanyID, TotalCapacity, BannerMessage);
+                return Ok(resp);
+            }
+            else return
+                    BadRequest();
+        }
+
+        [HttpPost("api/Admin/UpdateOffice")]
+        public IActionResult UpdateOffice(int AdminID, int OfficeId, string OfficeName, int TotalCapacity, string BannerMessage)
+        {
+            if (_adminservice.AdminCheck(AdminID))
+            {
+                var resp = _adminservice.UpdateOffice(OfficeId, OfficeName, TotalCapacity, BannerMessage);
                 return Ok(resp);
             }
             else return
@@ -31,11 +67,11 @@ namespace Officemancer.Controllers
         }
 
         [HttpPost("api/Admin/UpdateFloor")]
-        public IActionResult UpdateFloor(int userid, Floor f)
+        public IActionResult UpdateFloor(int AdminID, int floorid, string newName, int newMax, bool newBookable)
         {
-            if (_adminservice.AdminCheck(userid))
+            if (_adminservice.AdminCheck(AdminID))
             {
-                var resp = _adminservice.UpdateFloor(f);
+                var resp = _adminservice.UpdateFloor(floorid, newName, newMax, newBookable);
                 return Ok(resp);
             }
             else return
@@ -43,11 +79,11 @@ namespace Officemancer.Controllers
         }
 
         [HttpPost("api/Admin/AddFloor")]
-        public IActionResult AddFloor(int userid, Floor f)
+        public IActionResult AddFloor(int AdminID, string name, int officeId, int max, bool bookable)
         {
-            if (_adminservice.AdminCheck(userid))
+            if (_adminservice.AdminCheck(AdminID))
             {
-                var resp = _adminservice.AddFloor(f);
+                var resp = _adminservice.AddFloor(name,officeId, max, bookable);
                 return Ok(resp);
             }
             else return

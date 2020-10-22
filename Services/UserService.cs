@@ -88,17 +88,17 @@ namespace Officemancer.Services
                 if (res.OfficeID < 1 || res.FloorID < 1 || res.BookerID < 1)
                     return "ID not correct";
 
-                if (res.Mancers == null || res.Mancers.Count < 1)
+                if (res.MancerIds == null || res.MancerIds.Count < 1)
                     return "No Mancers in this booking";
 
-                if (isFloorFull(res.OfficeID, res.FloorID, res.Mancers.Count, res.Date))
+                if (isFloorFull(res.OfficeID, res.FloorID, res.MancerIds.Count, res.Date))
                     return "Not enough room on this floor for all reservations";
 
-                foreach (User u in res.Mancers)
+                foreach (int u in res.MancerIds)
                 {
                     Reservation r = new Reservation
                     {
-                        BookerID = u.UserID,
+                        BookerID = u,
                         FloorID = res.FloorID,
                         OfficeID = res.OfficeID,
                         Date = res.Date,
@@ -118,9 +118,9 @@ namespace Officemancer.Services
         {
             var floor = _context.Floors.Where(x => x.FloorID == floorid).FirstOrDefault();
             if (floor.Bookable && (floor.MaxCapacity - reservations) > GetReservations(officeid, date, floorid).Count)
-                return true;
-            else
                 return false;
+            else
+                return true;
         }
 
         private List<Reservation> GetReservations(int officeid, DateTime date, int? floorid)
