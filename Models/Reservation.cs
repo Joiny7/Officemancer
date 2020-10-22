@@ -7,8 +7,11 @@ namespace Officemancer.Models
 {
     public class Reservation
     {
-        public DateTime date { get; set; }
-        public int floorID { get; set; }
-        public User mancer { get; set; }
+        public int ReservationID { get; set; }
+        public int FloorID { get; set; }
+        public int OfficeID { get; set; }
+        public int BookerID { get; set; }
+        public DateTime Date { get; set; }
+        public List<User> Mancers { get; set; }
     }
 }

@@ -7,10 +7,11 @@ namespace Officemancer.Models
 {
     public class User
     {
-        public string userName { get; set; }
-        public string firstName { get; set; }
-        public string lastName { get; set; }
-        public string password { get; set; }
-        public string company { get; set; }
+        public int UserID { get; set; }
+        public string UserName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int CompanyID { get; set; }
+        public bool Admin { get; set; }
     }
 }
