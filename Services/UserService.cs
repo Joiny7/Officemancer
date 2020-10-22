@@ -38,7 +38,7 @@ namespace Officemancer.Services
             DateTime d = new DateTime(year.GetValueOrDefault(), month, 1);
             Cdto.Month = d.ToString("MMMM", CultureInfo.InvariantCulture);
 
-            for (int i = 0; i < DateTime.DaysInMonth(year.GetValueOrDefault(), month); i++)
+            for (int i = 1; i < DateTime.DaysInMonth(year.GetValueOrDefault(), month); i++)
             {
                 var dd = CreateDayDto(officeid, year.GetValueOrDefault(), month, i);
                 Cdto.Days.Add(dd);

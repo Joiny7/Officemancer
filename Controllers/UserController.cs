@@ -22,7 +22,7 @@ namespace Officemancer.Controllers
             bool resp = _userservice.Login(username, password);
 
             if (resp)
-                return Ok();
+                return Ok("Success");
             else
                 return BadRequest();
         }

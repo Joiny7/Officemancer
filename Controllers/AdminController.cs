@@ -4,11 +4,58 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Officemancer.Models;
+using Officemancer.Services;
 
 namespace Officemancer.Controllers
 {
     public class AdminController : Controller
     {
+        private IAdminService _adminservice;
+
+        public AdminController(IAdminService adminservice)
+        {
+            _adminservice = adminservice;
+        }
+
+        public IActionResult SetBannerMessage(int userid, string message)
+        {
+            if (_adminservice.AdminCheck(userid))
+            {
+                var resp = _adminservice.SetBannerMessage(userid, message);
+                return Ok(resp);
+            }
+            else return
+                    BadRequest();
+        }
+
+        public IActionResult UpdateFloor(int userid, Floor f)
+        {
+            if (_adminservice.AdminCheck(userid))
+            {
+                var resp = _adminservice.UpdateFloor(f);
+                return Ok(resp);
+            }
+            else return
+                   BadRequest();
+        }
+
+        public IActionResult AddFloor(int userid, Floor f)
+        {
+            if (_adminservice.AdminCheck(userid))
+            {
+                var resp = _adminservice.AddFloor(f);
+                return Ok(resp);
+            }
+            else return
+                   BadRequest();
+        }
+
+
+
+
+
+
         // GET: Admin
         public ActionResult Index()
         {
