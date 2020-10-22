@@ -4,11 +4,49 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Officemancer.Models;
+using Officemancer.Services;
 
 namespace Officemancer.Controllers
 {
     public class UserController : Controller
     {
+        private readonly IUserService _userservice;
+        public UserController(IUserService userservice)
+        {
+            _userservice = userservice;
+        }
+
+        public IActionResult Login(string username, string password)
+        {
+            bool resp = _userservice.Login(username, password);
+
+            if (resp)
+                return Ok();
+            else
+                return BadRequest();
+        }
+
+        public IActionResult BookReservation(Reservation res)
+        {
+            if (res == null)
+                return BadRequest();
+
+            string s = _userservice.CreateReservation(res);
+            return Ok(s);
+        }
+
+        public IActionResult GetMonth(int officeID, int month, int? year)
+        {
+            return Ok(_userservice.GetMonth(officeID, month, year));
+        }
+
+        public IActionResult GetOffice(int officeID)
+        {
+            return Ok(_userservice.GetOffice(officeID));
+        }
+
+
         // GET: User
         public ActionResult Index()
         {

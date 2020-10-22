@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Officemancer;
 
 namespace Officemancer.Migrations
 {
     [DbContext(typeof(MancerContext))]
-    partial class MancerContextModelSnapshot : ModelSnapshot
+    [Migration("20201022080240_InitialCreate4")]
+    partial class InitialCreate4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,7 +48,7 @@ namespace Officemancer.Migrations
 
                     b.Property<int>("MaxCapacity");
 
-                    b.Property<int>("OfficeID");
+                    b.Property<int?>("OfficeID");
 
                     b.HasKey("FloorID");
 
@@ -109,6 +111,8 @@ namespace Officemancer.Migrations
 
                     b.HasKey("ReservationID");
 
+                    b.HasIndex("FloorID");
+
                     b.ToTable("Reservations");
                 });
 
@@ -137,7 +141,14 @@ namespace Officemancer.Migrations
                 {
                     b.HasOne("Officemancer.Models.Office")
                         .WithMany("floors")
-                        .HasForeignKey("OfficeID")
+                        .HasForeignKey("OfficeID");
+                });
+
+            modelBuilder.Entity("Officemancer.Models.Reservation", b =>
+                {
+                    b.HasOne("Officemancer.Models.Floor")
+                        .WithMany("Reservations")
+                        .HasForeignKey("FloorID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

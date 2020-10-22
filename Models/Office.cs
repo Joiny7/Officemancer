@@ -13,7 +13,7 @@ namespace Officemancer.Models
         public int TotalCapacity { get; set; }
         public int CurrentCapacity { get; set; }
         public string BannerMessage { get; set; }
-        public List<Floor> floors { get; set; }
+        public List<Floor> Floors { get; set; }
 
         //public Floor CreateFloor(string name, int maxMancers, bool open)
         //{

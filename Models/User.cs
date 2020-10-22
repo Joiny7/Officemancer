@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,5 +14,7 @@ namespace Officemancer.Models
         public string LastName { get; set; }
         public int CompanyID { get; set; }
         public bool Admin { get; set; }
+        [NotMapped]
+        public List<Reservation> UserReservations { get; set; }
     }
 }
