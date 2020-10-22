@@ -27,7 +27,7 @@ namespace Officemancer.Services
 
         public string CreateReservation(Reservation res)
         {
-            if(res != null)
+            if (res != null)
             {
                 if (res.Date == null)
                     return "Date cannot be null";
@@ -38,10 +38,16 @@ namespace Officemancer.Services
                 if (res.Mancers == null || res.Mancers.Count < 1)
                     return "No Mancers in this booking";
 
+
+
+
+
                 _context.Reservations.Add(res);
                 _context.SaveChanges();
                 return "Reservation Successfull";
             }
+            else
+                return "bad model";
         }
     }
 }
