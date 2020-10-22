@@ -65,4 +65,3 @@ C:\Users\ofagerlin\Source\Repos\Officemancer\obj\Debug\netcoreapp2.2\Officemance
 C:\Users\ofagerlin\Source\Repos\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.pdb
 C:\Users\ofagerlin\Source\Repos\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.genruntimeconfig.cache
 C:\Users\ofagerlin\Source\Repos\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.csproj.CopyComplete
-E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.csprojAssemblyReference.cache

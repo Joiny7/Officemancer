@@ -11,7 +11,7 @@ namespace Officemancer.Controllers
 {
     public class UserController : Controller
     {
-        private readonly IUserService _userservice;
+        private IUserService _userservice;
         public UserController(IUserService userservice)
         {
             _userservice = userservice;

@@ -23,8 +23,11 @@ namespace Officemancer
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
         public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
+
             Configuration = configuration;
 
             var builder = new ConfigurationBuilder()
@@ -47,16 +50,22 @@ namespace Officemancer
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("https://localhost:44391",
+                                                          "https://officemancer.azurewebsites.net");
+                                  });
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "MRM API Documentation", Version = "v1" });
+#pragma warning disable CS0618 // Type or member is obsolete
                 c.DescribeAllEnumsAsStrings();
-                // Set the comments path for the swagger json and ui.
-                var basePath = PlatformServices.Default.Application.ApplicationBasePath;
-                var xmlPath = Path.Combine(basePath, "MrmApi.xml");
-                c.IncludeXmlComments(xmlPath);
-                //xmlPath = Path.Combine(basePath, "MrmApi.DomainObjects.xml");
-                c.IncludeXmlComments(xmlPath);
+#pragma warning restore CS0618 // Type or member is obsolete
             });
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
@@ -64,8 +73,9 @@ namespace Officemancer
             options.UseSqlServer(Configuration.GetConnectionString("MancerDBConnectionString")));
 
             services.AddScoped<MancerContext>();
-            services.AddScoped<AdminService>();
-
+            services.AddScoped<IAdminService, AdminService>();
+            services.AddScoped<IUserService,UserService>();
+            
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
