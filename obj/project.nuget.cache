@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "irQwvK5Gj/2B1RQG3GxKhGRNbbPggY2qbOD+5jYR4iG/TG5JYBYktIIrOrnOcIgaUcyi7dpgctF6EOzIAXkTIA==",
+  "dgSpecHash": "pV4dlL7BQePeCG2GErFnFetRLywTv32R6JJi8UMBfjPdq27JHhtvuGjaOQZGIhOmuvWdoaTZtzL8Sh6xcQXJdQ==",
   "success": true,
   "projectFilePath": "E:\\Work\\Officemancer\\Officemancer.csproj",
   "expectedPackageFiles": [
@@ -216,6 +216,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
