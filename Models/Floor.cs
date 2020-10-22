@@ -7,11 +7,11 @@ namespace Officemancer.Models
 {
     public class Floor
     {
-        public int floorID { get; set; }
-        public string name { get; set; }
-        public int maxMancers { get; set; }
-        public int currentMancers { get; set; }
-        public bool open { get; set; }
-        public List<Reservation> reservations { get; set; }
+        public int FloorID { get; set; }
+        public string FloorName { get; set; }
+        public int MaxCapacity { get; set; }
+        public int CurrentCapacity { get; set; }
+        public bool Bookable { get; set; }
+        public List<Reservation> Reservations { get; set; }
     }
 }

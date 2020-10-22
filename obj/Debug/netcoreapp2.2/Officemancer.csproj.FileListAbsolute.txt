@@ -8,7 +8,6 @@ E:\Work\Officemancer\bin\Debug\netcoreapp2.2\Officemancer.dll
 E:\Work\Officemancer\bin\Debug\netcoreapp2.2\Officemancer.pdb
 E:\Work\Officemancer\bin\Debug\netcoreapp2.2\Officemancer.Views.dll
 E:\Work\Officemancer\bin\Debug\netcoreapp2.2\Officemancer.Views.pdb
-E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.csprojAssemblyReference.cache
 E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.RazorAssemblyInfo.cache
 E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.RazorAssemblyInfo.cs
 E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.AssemblyInfoInputs.cache
@@ -32,3 +31,4 @@ E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.pdb
 E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.genruntimeconfig.cache
 E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.csproj.CopyComplete
 E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.csproj.CoreCompileInputs.cache
+E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.csprojAssemblyReference.cache
