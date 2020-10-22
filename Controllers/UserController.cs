@@ -17,6 +17,7 @@ namespace Officemancer.Controllers
             _userservice = userservice;
         }
 
+        [HttpPost("api/User/Login")]
         public IActionResult Login(string username, string password)
         {
             bool resp = _userservice.Login(username, password);
@@ -27,6 +28,7 @@ namespace Officemancer.Controllers
                 return BadRequest();
         }
 
+        [HttpPost("api/User/BookReservation")]
         public IActionResult BookReservation(Reservation res)
         {
             if (res == null)
@@ -36,11 +38,13 @@ namespace Officemancer.Controllers
             return Ok(s);
         }
 
+        [HttpPost("api/User/GetMonth")]
         public IActionResult GetMonth(int officeID, int month, int? year)
         {
             return Ok(_userservice.GetMonth(officeID, month, year));
         }
 
+        [HttpPost("api/User/GetOffice")]
         public IActionResult GetOffice(int officeID)
         {
             return Ok(_userservice.GetOffice(officeID));

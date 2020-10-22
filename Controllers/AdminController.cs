@@ -18,6 +18,7 @@ namespace Officemancer.Controllers
             _adminservice = adminservice;
         }
 
+        [HttpPost("api/Admin/SetBannerMessage")]
         public IActionResult SetBannerMessage(int userid, string message)
         {
             if (_adminservice.AdminCheck(userid))
@@ -29,6 +30,7 @@ namespace Officemancer.Controllers
                     BadRequest();
         }
 
+        [HttpPost("api/Admin/UpdateFloor")]
         public IActionResult UpdateFloor(int userid, Floor f)
         {
             if (_adminservice.AdminCheck(userid))
@@ -40,6 +42,7 @@ namespace Officemancer.Controllers
                    BadRequest();
         }
 
+        [HttpPost("api/Admin/AddFloor")]
         public IActionResult AddFloor(int userid, Floor f)
         {
             if (_adminservice.AdminCheck(userid))

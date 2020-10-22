@@ -59,14 +59,8 @@ namespace Officemancer
                                                           "https://officemancer.azurewebsites.net");
                                   });
             });
-
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "MRM API Documentation", Version = "v1" });
-#pragma warning disable CS0618 // Type or member is obsolete
-                c.DescribeAllEnumsAsStrings();
-#pragma warning restore CS0618 // Type or member is obsolete
-            });
+            //services.AddControllers();
+            services.AddSwaggerGen();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddDbContext<MancerContext>(options =>
@@ -99,6 +93,11 @@ namespace Officemancer
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
 
             app.UseMvc(routes =>
             {

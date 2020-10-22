@@ -30,7 +30,6 @@ E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.dll
 E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.pdb
 E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.genruntimeconfig.cache
 E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.csproj.CopyComplete
-E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.csproj.CoreCompileInputs.cache
 C:\Users\ofagerlin\Source\Repos\Officemancer\bin\Debug\netcoreapp2.2\appsettings.Development.json
 C:\Users\ofagerlin\Source\Repos\Officemancer\bin\Debug\netcoreapp2.2\appsettings.json
 C:\Users\ofagerlin\Source\Repos\Officemancer\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
@@ -65,3 +64,4 @@ C:\Users\ofagerlin\Source\Repos\Officemancer\obj\Debug\netcoreapp2.2\Officemance
 C:\Users\ofagerlin\Source\Repos\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.pdb
 C:\Users\ofagerlin\Source\Repos\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.genruntimeconfig.cache
 C:\Users\ofagerlin\Source\Repos\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.csproj.CopyComplete
+E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.csproj.CoreCompileInputs.cache
