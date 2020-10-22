@@ -14,6 +14,7 @@ namespace Officemancer
         public DbSet<Floor> Floors { get; set; }
         public DbSet<Office> Offices { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
+        public DbSet<MiniLogin> Logins { get; set; }
 
         public MancerContext(DbContextOptions<MancerContext> options) : base(options) { }
     }
