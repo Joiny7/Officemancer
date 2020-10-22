@@ -2,6 +2,300 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Officemancer</h1>
+<div class="row" id="login">
+    <div class="container">
+
+        <img src="~/img/Sopra_Steria_logo.svg" alt="" class="logo" />
+
+        <form id="login_form">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Email" />
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="password" class="form-control" />
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" checked> Håll mig inloggad
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-default btn-primary btn-block" value="Logga in" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row" id="calendar">
+    <div class="container">
+        <p>Du är inloggad som: [insert email here]</p>
+        <div class="alert alert-primary">
+            <p>
+                Onsdag 24/10 är det kundevent, begränsat antal platser på kontoret.
+            </p>
+        </div>
+        <div class="calendar_month">
+            <header>
+                <div class="day text-center">Mo</div>
+                <div class="day text-center">Tu</div>
+                <div class="day text-center">We</div>
+                <div class="day text-center">Th</div>
+                <div class="day text-center">Fr</div>
+                <div class="day text-center">Sa</div>
+                <div class="day text-center">Su</div>
+            </header>
+            <div class="dates">
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        1
+                    </span>
+                </div>
+                <div class="date alert-warning">
+                    <span class="registered">
+                        50/60
+                    </span>
+                    <span class="day_of_month">
+                        2
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        3
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        4
+                    </span>
+                </div>
+                <div class="date alert-danger">
+                    <span class="registered">
+                        60/60
+                    </span>
+                    <span class="day_of_month">
+                        5
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        6
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        7
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        8
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        9
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        10
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        11
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        12
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        13
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        14
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        15
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        16
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        17
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        18
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        19
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        20
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        21
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        22
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        23
+                    </span>
+                </div>
+                <div class="date alert-warning">
+                    <span class="registered">
+                        0/15
+                    </span>
+                    <span class="day_of_month">
+                        24
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        25
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        26
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        27
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        28
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        29
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        30
+                    </span>
+                </div>
+                <div class="date alert-success">
+                    <span class="registered">
+                        0/60
+                    </span>
+                    <span class="day_of_month">
+                        31
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

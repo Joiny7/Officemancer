@@ -1,4 +1,22 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿// We've used jQuery since it came bundled in the installation.
+// Feel free to change to change to a JS-lib of your choice.
 
-// Write your JavaScript code.
+function login(user, pass) {
+  // alert(user + " " + pass);
+  $("#login").fadeOut(function () {
+    $("#calendar").fadeIn();
+  });
+}
+
+$(document).ready(function () {
+  $("#login_form").submit(function (e) {
+    // alert("Run login script");
+
+    const user = $("#email").val();
+    const pass = $("#password").val();
+
+    login(user, pass);
+
+    e.preventDefault();
+  });
+});
