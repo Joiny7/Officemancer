@@ -29,7 +29,7 @@ function login(user, pass) {
   $("#login_form").disabled;
 
   $.ajax(
-    "https://officemancer.azurewebsites.net/user/login?username=" +
+    "https://officemancer.azurewebsites.net/api/User/Login?username=" +
       user +
       "&password=" +
       pass +
@@ -41,7 +41,7 @@ function login(user, pass) {
           $("#logged_in_as").append(user);
 
           $.ajax(
-            "https://officemancer.azurewebsites.net/user/getmonth?officeid=1&month=10&year=2020"
+            "https://officemancer.azurewebsites.net/api/User/GetMonth?officeID=1&month=10&year=2020"
           ).done(function (data) {
             displayMonth(data.month);
             displayCalendar(data.days);
