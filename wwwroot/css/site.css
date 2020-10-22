@@ -32,7 +32,10 @@ header {
   display: none;
 }
 
-.calendar_month header,
+.calendar_month header {
+  text-align: center;
+}
+
 .calendar_month .dates {
   display: flex;
 }
