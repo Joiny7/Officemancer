@@ -35,6 +35,22 @@ function getLatestWarning(user) {
   });
 }
 
+function getBannerMessage(officeID) {
+  $.ajax({
+    method: "POST",
+    url:
+      "https://officemancer.azurewebsites.net/api/User/GetOffice?officeID=" +
+      officeID,
+    statusCode: {
+      200: function (data) {
+        $("#banner").append(
+          "<div class='alert alert-primary'>" + data.bannerMessage + "</div>"
+        );
+      },
+    },
+  });
+}
+
 function updateOffice(
   adminID,
   officeID,
@@ -110,7 +126,7 @@ function getMonth(officeID, month, year) {
   }).done(function (data) {
     displayMonth(data.month);
     displayCalendar(data.days);
-    closePopUp("success", "You're information is saved");
+    closePopUp("success", "Your information is saved");
   });
 }
 
@@ -160,6 +176,7 @@ function login(user) {
       $("#logged_in_as").append(user);
 
       getLatestWarning(userID);
+      getBannerMessage(1);
 
       if (isAdmin) {
         $("#logged_in_as").append(
