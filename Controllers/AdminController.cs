@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Officemancer.Dtos;
 using Officemancer.Models;
 using Officemancer.Services;
 
@@ -16,6 +17,18 @@ namespace Officemancer.Controllers
         public AdminController(IAdminService adminservice)
         {
             _adminservice = adminservice;
+        }
+
+        [HttpPost("api/Admin/CreateUser")]
+        public IActionResult CreateUser(int AdminID, UserDto dto)
+        {
+            if (_adminservice.AdminCheck(AdminID))
+            {
+                var resp = _adminservice.CreateUser(dto);
+                return Ok(resp);
+            }
+            else return
+                    BadRequest();
         }
 
         [HttpPost("api/Admin/CreateWarning")]

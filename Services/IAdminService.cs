@@ -1,4 +1,5 @@
-﻿using Officemancer.Models;
+﻿using Officemancer.Dtos;
+using Officemancer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace Officemancer.Services
         string AddOffice(string OfficeName, int CompanyID, int TotalCapacity, string BannerMessage);
         string UpdateOffice(int OfficeId, string OfficeName, int TotalCapacity, string BannerMessage);
         int CreateWarning(int CompanyID, string Message, int? OfficeID);
+        User CreateUser(UserDto dto);
 
     }
 }

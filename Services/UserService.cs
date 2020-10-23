@@ -17,10 +17,17 @@ namespace Officemancer.Services
             _context = context;
         }
 
-        //public List<UserReservation> GetUserReservations(int userid)
-        //{
-
-        //}
+        public List<UserReservation> GetUserReservations(int userId)
+        {
+            var list = _context.UserReservations.Where(x => x.UserID == userId).ToList();
+            return list;
+        }        
+        
+        public UserReservation GetUserReservation(int userReservationId)
+        {
+            UserReservation ur = _context.UserReservations.Where(x => x.UserReservationID == userReservationId).FirstOrDefault();
+            return ur;
+        }
 
         public Warning GetLastestWarning(int userid)
         {

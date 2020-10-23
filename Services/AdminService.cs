@@ -1,4 +1,5 @@
-﻿using Officemancer.Models;
+﻿using Officemancer.Dtos;
+using Officemancer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,27 @@ namespace Officemancer.Services
         public AdminService(MancerContext context)
         {
             _context = context;
+        }
+
+        public User CreateUser(UserDto dto)
+        {
+            var comp = _context.Companies.Where(x => x.CompanyID == dto.CompanyID).FirstOrDefault();
+
+            if (comp == null)
+                return null;
+
+            User u = new User
+            {
+                UserName = dto.UserName,
+                FirstName = dto.FirstName,
+                LastName = dto.LastName,
+                CompanyID = dto.CompanyID,
+                Admin = dto.Admin
+            };
+
+            _context.Users.Add(u);
+            _context.SaveChanges();
+            return _context.Users.Where(x => x.FirstName == dto.FirstName && x.LastName == dto.LastName).FirstOrDefault();
         }
 
         public int CreateWarning(int CompanyID, string Message, int? OfficeID)

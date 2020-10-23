@@ -16,5 +16,7 @@ namespace Officemancer.Services
         List<User> GetUsers(int id);
         User GetUser(string username);
         Warning GetLastestWarning(int userid);
+        List<UserReservation> GetUserReservations(int userId);
+        UserReservation GetUserReservation(int userReservationId);
     }
 }

@@ -18,4 +18,13 @@ namespace Officemancer.Dtos
         public int MaxCapacity { get; set; }
         public int CurrentCapacity { get; set; }
     }
+
+    public class UserDto
+    {
+        public string UserName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int CompanyID { get; set; }
+        public bool Admin { get; set; }
+    }
 }
