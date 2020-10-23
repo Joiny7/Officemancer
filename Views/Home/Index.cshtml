@@ -7,6 +7,10 @@
 
         <img src="~/img/Sopra_Steria_logo.svg" alt="" class="logo" />
 
+        <div class="alert alert-danger login_feedback">
+            Fel användarnamn eller lösenord
+        </div>
+
         <form id="login_form">
             <div class="form-group">
                 <label for="email">Email</label>
@@ -31,17 +35,15 @@
 <div class="row" id="calendar">
     <div class="container">
         <p>Du är inloggad som: <span id="logged_in_as"></span></p>
-        <div class="alert alert-primary">
-            <p>
-                Onsdag 24/10 är det kundevent, begränsat antal platser på kontoret.
-            </p>
+        <div id="warning">
+
         </div>
         <div class="calendar_month">
             <header>
-                <p>Laddar...</p>
+                <i class='fas fa-spinner'></i>
             </header>
             <div class="dates">
-                <p>Laddar...</p>
+                <i class='fas fa-spinner'></i>
             </div>
         </div>
     </div>
