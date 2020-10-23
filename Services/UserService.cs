@@ -17,6 +17,19 @@ namespace Officemancer.Services
             _context = context;
         }
 
+        //public List<UserReservation> GetUserReservations(int userid)
+        //{
+
+        //}
+
+        public Warning GetLastestWarning(int userid)
+        {
+            var companyid = _context.Users.Where(x => x.UserID == userid).Select(y => y.CompanyID).FirstOrDefault();
+            var w = _context.Warnings.Where(x => x.CompanyID == companyid).ToList();
+            w.OrderBy(x => x.Timestamp);
+            return w.FirstOrDefault();
+        }
+
         public List<User> GetUsers(int id)
         {
             var companyid = _context.Users.Where(x => x.UserID == id).Select(y => y.CompanyID).FirstOrDefault();
@@ -24,15 +37,20 @@ namespace Officemancer.Services
             return users;
         }
 
+        public User GetUser(string username)
+        {
+            var user = _context.Users.Where(x => x.UserName == username).FirstOrDefault();
+            return user;
+        }
 
-        public bool Login(string username, string password)
+        public int? Login(string username, string password)
         {
             var User = _context.Logins.Where(x => x.UserName == username && x.Password == password).FirstOrDefault();
 
             if (User != null)
-                return true;
+                return User.UserID;
             else
-                return false;
+                return null;
         }
 
         public CalenderDto GetMonth(int officeid, int month, int? year)
@@ -72,7 +90,6 @@ namespace Officemancer.Services
 
         private int GetCurrentCapacity(int officeid, DateTime date)
         {
-            var office = GetOffice(officeid);
             var resservs = GetReservations(officeid, date, null);
             return resservs.Count;
         }
@@ -96,8 +113,11 @@ namespace Officemancer.Services
                 if (res.OfficeID < 1 || res.FloorID < 1 || res.BookerID < 1)
                     return "ID not correct";
 
-                if (res.MancerIds == null || res.MancerIds.Count < 1)
-                    return "No Mancers in this booking";
+                if ((res.MancerIds == null || res.MancerIds.Count < 1) && !res.MancerIds.Contains(res.BookerID))
+                {
+                    res.MancerIds = new List<int>();
+                    res.MancerIds.Add(res.BookerID);
+                }
 
                 if (isFloorFull(res.OfficeID, res.FloorID, res.MancerIds.Count, res.Date))
                     return "Not enough room on this floor for all reservations";
@@ -110,9 +130,20 @@ namespace Officemancer.Services
                         FloorID = res.FloorID,
                         OfficeID = res.OfficeID,
                         Date = res.Date,
+                        Mancers = res.Mancers
                     };
 
                     _context.Reservations.Add(r);
+                    _context.SaveChanges();
+
+                    UserReservation ur = new UserReservation()
+                    {
+                        ReservationID = r.ReservationID,
+                        UserID = u,
+                        Timestamp = DateTime.Now
+                    };
+
+                    _context.UserReservations.Add(ur);
                     _context.SaveChanges();
                 }
 

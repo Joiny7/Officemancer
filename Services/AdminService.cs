@@ -15,6 +15,20 @@ namespace Officemancer.Services
             _context = context;
         }
 
+        public int CreateWarning(int CompanyID, string Message, int? OfficeID)
+        {
+            Warning w = new Warning
+            {
+                CompanyID = CompanyID,
+                OfficeID = OfficeID,
+                Message = Message,
+                Timestamp = DateTime.Now
+            };
+
+            _context.Warnings.Add(w);
+            _context.SaveChanges();
+            return w.WarningID;
+        }
 
         public string AddOffice(string OfficeName, int CompanyID, int TotalCapacity, string BannerMessage)
         {

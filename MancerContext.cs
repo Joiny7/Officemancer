@@ -15,6 +15,8 @@ namespace Officemancer
         public DbSet<Office> Offices { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<MiniLogin> Logins { get; set; }
+        public DbSet<UserReservation> UserReservations { get; set; }
+        public DbSet<Warning> Warnings { get; set; }
 
         public MancerContext(DbContextOptions<MancerContext> options) : base(options) { }
     }

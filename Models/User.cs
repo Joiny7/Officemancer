@@ -14,7 +14,5 @@ namespace Officemancer.Models
         public string LastName { get; set; }
         public int CompanyID { get; set; }
         public bool Admin { get; set; }
-        [NotMapped]
-        public List<Reservation> UserReservations { get; set; }
     }
 }

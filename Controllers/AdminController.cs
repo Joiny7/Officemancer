@@ -18,6 +18,18 @@ namespace Officemancer.Controllers
             _adminservice = adminservice;
         }
 
+        [HttpPost("api/Admin/CreateWarning")]
+        public IActionResult CreateWarning(int AdminID, int CompanyID, string Message)
+        {
+            if (_adminservice.AdminCheck(AdminID))
+            {
+                var resp = _adminservice.CreateWarning(CompanyID, Message, null);
+                return Ok(resp);
+            }
+            else return
+                    BadRequest();
+        }
+
         [HttpGet("api/Admin/GetUsers")]
         public IActionResult GetUsers(int AdminID, int companyid)
         {

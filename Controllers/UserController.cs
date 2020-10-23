@@ -17,6 +17,20 @@ namespace Officemancer.Controllers
             _userservice = userservice;
         }
 
+        [HttpGet("api/Users/GetLastestWarning")]
+        public IActionResult GetLastestWarning(int userid)
+        {
+            var resp = _userservice.GetLastestWarning(userid);
+            return Ok(resp);
+        }        
+        
+        [HttpGet("api/Users/GetUser")]
+        public IActionResult GetUser(string UserName)
+        {
+            var resp = _userservice.GetUser(UserName);
+            return Ok(resp);
+        }        
+        
         [HttpGet("api/Users/GetUsers")]
         public IActionResult GetUsers(int UserId)
         {
@@ -28,9 +42,9 @@ namespace Officemancer.Controllers
         [HttpPost("api/User/Login")]
         public IActionResult Login(string username, string password)
         {
-            bool resp = _userservice.Login(username, password);
+            int? id = _userservice.Login(username, password);
 
-            if (resp)
+            if (id != null)
                 return Ok("Success");
             else
                 return BadRequest();

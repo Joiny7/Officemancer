@@ -15,6 +15,7 @@ namespace Officemancer.Services
         List<User> GetUsers(int companyid);
         string AddOffice(string OfficeName, int CompanyID, int TotalCapacity, string BannerMessage);
         string UpdateOffice(int OfficeId, string OfficeName, int TotalCapacity, string BannerMessage);
+        int CreateWarning(int CompanyID, string Message, int? OfficeID);
 
     }
 }

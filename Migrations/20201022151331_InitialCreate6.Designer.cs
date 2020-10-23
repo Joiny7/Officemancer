@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Officemancer;
 
 namespace Officemancer.Migrations
 {
     [DbContext(typeof(MancerContext))]
-    partial class MancerContextModelSnapshot : ModelSnapshot
+    [Migration("20201022151331_InitialCreate6")]
+    partial class InitialCreate6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -150,25 +152,6 @@ namespace Officemancer.Migrations
                     b.HasKey("UserReservationID");
 
                     b.ToTable("UserReservations");
-                });
-
-            modelBuilder.Entity("Officemancer.Models.Warning", b =>
-                {
-                    b.Property<int>("WarningID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CompanyID");
-
-                    b.Property<string>("Message");
-
-                    b.Property<int?>("OfficeID");
-
-                    b.Property<DateTime>("Timestamp");
-
-                    b.HasKey("WarningID");
-
-                    b.ToTable("Warnings");
                 });
 
             modelBuilder.Entity("Officemancer.Models.Floor", b =>
