@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Officemancer.Dtos;
 using Officemancer.Models;
 using Officemancer.Services;
 
@@ -86,6 +87,25 @@ namespace Officemancer.Controllers
             return Ok(_userservice.GetOffice(officeID));
         }
         // <3
+        [HttpPost]
+        public IActionResult EditReservation(int reservationId, ReservationDto dto)
+        {
+            if (dto == null)
+                return BadRequest();
+
+            string response = _userservice.UpdateReservation(reservationId, dto);
+            return Ok(response);
+        }
+
+        [HttpPost]
+        public IActionResult DeleteReservation(int reservationId)
+        {
+            if (reservationId != 0)
+                return BadRequest();
+
+            string response = _userservice.DeleteReservation(reservationId);
+            return Ok(response);
+        }
 
         // GET: User
         public ActionResult Index()

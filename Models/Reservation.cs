@@ -11,8 +11,7 @@ namespace Officemancer.Models
         public int ReservationID { get; set; }
         public int FloorID { get; set; }
         public int OfficeID { get; set; }
-        public int BookerID { get; set; }
-        public int Mancers { get; set; }
+        public int BookerID { get; set; }      
         public DateTime Date { get; set; }
         [NotMapped]
         public List<int> MancerIds { get; set; }
