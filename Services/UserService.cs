@@ -1,9 +1,11 @@
-﻿using Officemancer.Dtos;
+﻿using Microsoft.CodeAnalysis.CSharp;
+using Officemancer.Dtos;
 using Officemancer.Models;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 namespace Officemancer.Services
@@ -181,15 +183,15 @@ namespace Officemancer.Services
                 return res;
             }
         }
-        public string UpdateReservation(int id, ReservationDto resDto)
+        public string UpdateReservation(int reservationId, ReservationDto resDto)
         {
 
-            var reservation = _context.Reservations.FirstOrDefault(r => r.ReservationID == id);
-            var userReservations = _context.UserReservations.Where(r => r.ReservationID == id);
+            Reservation reservation = _context.Reservations.FirstOrDefault(r => r.ReservationID == reservationId);
+            IQueryable<UserReservation> userReservations = _context.UserReservations.Where(r => r.ReservationID == reservationId);
             //Update reservation
             if (reservation == null)
             {
-                return "Reservation with Id " + id.ToString() + " not found to update";
+                return "Reservation with Id " + reservationId.ToString() + " not found to update";
             }
             else
             {
@@ -198,9 +200,35 @@ namespace Officemancer.Services
 
                 _context.SaveChanges();
 
+                foreach(int userId in resDto.MancerIds)
+                {
+                    //Check if a new user is added
+                    bool ifUserExist = userReservations.Any(item => item.UserID.Equals(userId));
+                    if (!ifUserExist)
+                    {
+                        UserReservation ur = new UserReservation()
+                        {
+                            ReservationID = reservationId,
+                            UserID = userId,
+                            Timestamp = DateTime.Now
+                        };
+
+                        _context.UserReservations.Add(ur);
+                        _context.SaveChanges();
+                    }
+
+                }
+                    //check if user needs to be deleted
+                    List<UserReservation> toBeDeleted = userReservations.Where(userRes => !resDto.MancerIds.Any(mancerId => userRes.UserID == mancerId)).ToList();
+                    foreach(UserReservation userToDelete in toBeDeleted)
+                    {
+                        _context.UserReservations.Remove(userToDelete);
+                       _context.SaveChanges();
+                    }
 
 
-                return "Reservation with Id " + id.ToString() + " updated";
+
+                return "Reservation with Id " + reservationId.ToString() + " updated";
             }
         }
 

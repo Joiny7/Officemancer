@@ -87,7 +87,7 @@ namespace Officemancer.Controllers
             return Ok(_userservice.GetOffice(officeID));
         }
         // <3
-        [HttpPost]
+        [HttpPost("api/User/EditReservation")]
         public IActionResult EditReservation(int reservationId, ReservationDto dto)
         {
             if (dto == null)
@@ -97,7 +97,7 @@ namespace Officemancer.Controllers
             return Ok(response);
         }
 
-        [HttpPost]
+        [HttpPost("api/User/DeleteReservation")]
         public IActionResult DeleteReservation(int reservationId)
         {
             if (reservationId != 0)
