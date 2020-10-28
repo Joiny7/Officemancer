@@ -27,11 +27,4 @@ namespace Officemancer.Dtos
         public int CompanyID { get; set; }
         public bool Admin { get; set; }
     }
-
-    public class ReservationDto
-    {
-        public int FloorID { get; set; }
-        public DateTime Date { get; set; }
-        public List<int> MancerIds { get; set; }
-    }
 }

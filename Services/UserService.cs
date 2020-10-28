@@ -1,6 +1,5 @@
 ﻿using Officemancer.Dtos;
 using Officemancer.Models;
-using Remotion.Linq.Parsing.ExpressionVisitors.Transformation.PredefinedTransformations;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -137,7 +136,8 @@ namespace Officemancer.Services
                         BookerID = u,
                         FloorID = res.FloorID,
                         OfficeID = res.OfficeID,
-                        Date = res.Date
+                        Date = res.Date,
+                        Mancers = res.Mancers
                     };
 
                     _context.Reservations.Add(r);
@@ -182,52 +182,5 @@ namespace Officemancer.Services
                 return res;
             }
         }
-
-        public string UpdateReservation(int id, ReservationDto resDto)
-        {
-           
-            var reservation = _context.Reservations.FirstOrDefault(r => r.ReservationID == id);       
-            var userReservations = _context.UserReservations.Where(r => r.ReservationID == id);     
-            //Update reservation
-            if(reservation == null)
-            {
-                return "Reservation with Id " + id.ToString() + " not found to update";
-            }
-            else
-            {
-                reservation.FloorID = resDto.FloorID;
-                reservation.Date = resDto.Date;
-
-                _context.SaveChanges();
-
-                
-               
-                return "Reservation with Id " + id.ToString() + " updated";
-            }
-        }
-
-        public string DeleteReservation(int id)
-        {
-            var entety = _context.Reservations.FirstOrDefault(res => res.ReservationID == id);
-            var userReservations = _context.UserReservations.Where(r => r.ReservationID == id);
-            if (entety == null)
-            {
-                return "Reservation with Id " + id.ToString() + " not found";
-            }
-            else
-            {
-                _context.Reservations.Remove(entety);
-                _context.SaveChanges();
-
-                foreach(var user in userReservations)
-                {
-                    _context.UserReservations.Remove(user);
-                    _context.SaveChanges();
-
-                }
-                return "Reservation with Id " + id.ToString() + " deleted";
-            }
-        }
-        
     }
 }

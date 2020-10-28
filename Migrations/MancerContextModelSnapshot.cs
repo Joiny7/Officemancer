@@ -105,6 +105,8 @@ namespace Officemancer.Migrations
 
                     b.Property<int>("FloorID");
 
+                    b.Property<int>("Mancers");
+
                     b.Property<int>("OfficeID");
 
                     b.HasKey("ReservationID");
