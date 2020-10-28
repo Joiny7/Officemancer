@@ -18,5 +18,8 @@ namespace Officemancer.Services
         Warning GetLastestWarning(int userid);
         List<UserReservation> GetUserReservations(int userId);
         UserReservation GetUserReservation(int userReservationId);
+        string UpdateReservation(int id, ReservationDto res);
+        string DeleteReservation(int id);
+
     }
 }

@@ -1,0 +1,6 @@
+C:\Devops\Officemancer\obj\Debug\netcoreapp3.0\Officemancer.csprojAssemblyReference.cache
+C:\Devops\Officemancer\obj\Debug\netcoreapp3.0\Officemancer.AssemblyInfoInputs.cache
+C:\Devops\Officemancer\obj\Debug\netcoreapp3.0\Officemancer.AssemblyInfo.cs
+C:\Devops\Officemancer\obj\Debug\netcoreapp3.0\Officemancer.csproj.CoreCompileInputs.cache
+C:\Devops\Officemancer\obj\Debug\netcoreapp3.0\Officemancer.MvcApplicationPartsAssemblyInfo.cs
+C:\Devops\Officemancer\obj\Debug\netcoreapp3.0\Officemancer.MvcApplicationPartsAssemblyInfo.cache
