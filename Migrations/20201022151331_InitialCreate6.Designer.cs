@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Officemancer;
+using Platypus;
 
-namespace Officemancer.Migrations
+namespace Platypus.Migrations
 {
-    [DbContext(typeof(MancerContext))]
+    [DbContext(typeof(PlatypusContext))]
     [Migration("20201022151331_InitialCreate6")]
     partial class InitialCreate6
     {
@@ -21,7 +21,7 @@ namespace Officemancer.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Officemancer.Models.Company", b =>
+            modelBuilder.Entity("Platypus.Models.Company", b =>
                 {
                     b.Property<int>("CompanyID")
                         .ValueGeneratedOnAdd()
@@ -34,7 +34,7 @@ namespace Officemancer.Migrations
                     b.ToTable("Companies");
                 });
 
-            modelBuilder.Entity("Officemancer.Models.Floor", b =>
+            modelBuilder.Entity("Platypus.Models.Floor", b =>
                 {
                     b.Property<int>("FloorID")
                         .ValueGeneratedOnAdd()
@@ -57,7 +57,7 @@ namespace Officemancer.Migrations
                     b.ToTable("Floors");
                 });
 
-            modelBuilder.Entity("Officemancer.Models.MiniLogin", b =>
+            modelBuilder.Entity("Platypus.Models.MiniLogin", b =>
                 {
                     b.Property<int>("MiniLoginID")
                         .ValueGeneratedOnAdd()
@@ -74,7 +74,7 @@ namespace Officemancer.Migrations
                     b.ToTable("Logins");
                 });
 
-            modelBuilder.Entity("Officemancer.Models.Office", b =>
+            modelBuilder.Entity("Platypus.Models.Office", b =>
                 {
                     b.Property<int>("OfficeID")
                         .ValueGeneratedOnAdd()
@@ -95,7 +95,7 @@ namespace Officemancer.Migrations
                     b.ToTable("Offices");
                 });
 
-            modelBuilder.Entity("Officemancer.Models.Reservation", b =>
+            modelBuilder.Entity("Platypus.Models.Reservation", b =>
                 {
                     b.Property<int>("ReservationID")
                         .ValueGeneratedOnAdd()
@@ -116,7 +116,7 @@ namespace Officemancer.Migrations
                     b.ToTable("Reservations");
                 });
 
-            modelBuilder.Entity("Officemancer.Models.User", b =>
+            modelBuilder.Entity("Platypus.Models.User", b =>
                 {
                     b.Property<int>("UserID")
                         .ValueGeneratedOnAdd()
@@ -137,7 +137,7 @@ namespace Officemancer.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Officemancer.Models.UserReservation", b =>
+            modelBuilder.Entity("Platypus.Models.UserReservation", b =>
                 {
                     b.Property<int>("UserReservationID")
                         .ValueGeneratedOnAdd()
@@ -154,9 +154,9 @@ namespace Officemancer.Migrations
                     b.ToTable("UserReservations");
                 });
 
-            modelBuilder.Entity("Officemancer.Models.Floor", b =>
+            modelBuilder.Entity("Platypus.Models.Floor", b =>
                 {
-                    b.HasOne("Officemancer.Models.Office")
+                    b.HasOne("Platypus.Models.Office")
                         .WithMany("Floors")
                         .HasForeignKey("OfficeID")
                         .OnDelete(DeleteBehavior.Cascade);

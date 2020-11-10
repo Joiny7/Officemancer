@@ -21,7 +21,7 @@ function getLatestWarning(user) {
   $.ajax({
     method: "GET",
     url:
-      "https://officemancer.azurewebsites.net/api/Users/GetLastestWarning?userid=" +
+      "https://Platypus.azurewebsites.net/api/Users/GetLastestWarning?userid=" +
       user,
 
     statusCode: {
@@ -39,7 +39,7 @@ function getBannerMessage(officeID) {
   $.ajax({
     method: "POST",
     url:
-      "https://officemancer.azurewebsites.net/api/User/GetOffice?officeID=" +
+      "https://Platypus.azurewebsites.net/api/User/GetOffice?officeID=" +
       officeID,
     statusCode: {
       200: function (data) {
@@ -63,7 +63,7 @@ function updateOffice(
   $.ajax({
     method: "POST",
     url:
-      "https://officemancer.azurewebsites.net/api/Admin/UpdateOffice?AdminID=" +
+      "https://Platypus.azurewebsites.net/api/Admin/UpdateOffice?AdminID=" +
       adminID +
       "&OfficeId=" +
       officeID +
@@ -116,7 +116,7 @@ function getMonth(officeID, month, year) {
   $.ajax({
     method: "POST",
     url:
-      "https://officemancer.azurewebsites.net/api/User/GetMonth?officeID=" +
+      "https://Platypus.azurewebsites.net/api/User/GetMonth?officeID=" +
       officeID +
       "&month=" +
       month +
@@ -143,13 +143,13 @@ function makeReservation(user, date, officeID) {
   $.ajax({
     method: "POST",
     url:
-      "https://officemancer.azurewebsites.net/api/User/BookReservation?FloorID=1&OfficeID=" +
+      "https://Platypus.azurewebsites.net/api/User/BookReservation?FloorID=1&OfficeID=" +
       officeID +
       "&BookerID=" +
       user +
       "&Date=" +
       date +
-      "&MancerIds=",
+      "&UserIds=",
     statusCode: {
       500: function () {
         $(".popup p").remove();
@@ -199,7 +199,7 @@ function getUser(username) {
   $.ajax({
     method: "GET",
     url:
-      "https://officemancer.azurewebsites.net/api/Users/GetUser?UserName=" +
+      "https://Platypus.azurewebsites.net/api/Users/GetUser?UserName=" +
       username +
       "",
   }).done(function (data) {
@@ -230,7 +230,7 @@ function showPopUp(type, date, officeID) {
       $.ajax({
         method: "POST",
         url:
-          "https://officemancer.azurewebsites.net/api/User/GetOffice?officeID=" +
+          "https://Platypus.azurewebsites.net/api/User/GetOffice?officeID=" +
           officeID +
           "",
         statusCode: {
@@ -335,7 +335,7 @@ function loginSubmit(user, pass) {
   $.ajax({
     method: "POST",
     url:
-      "https://officemancer.azurewebsites.net/api/User/Login?username=" +
+      "https://Platypus.azurewebsites.net/api/User/Login?username=" +
       user +
       "&password=" +
       pass +

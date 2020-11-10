@@ -1,6 +1,6 @@
 ﻿using Microsoft.CodeAnalysis.CSharp;
-using Officemancer.Dtos;
-using Officemancer.Models;
+using Platypus.Dtos;
+using Platypus.Models;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -8,13 +8,13 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-namespace Officemancer.Services
+namespace Platypus.Services
 {
     public class UserService : IUserService
     {
-        private readonly MancerContext _context;
+        private readonly PlatypusContext _context;
 
-        public UserService(MancerContext context)
+        public UserService(PlatypusContext context)
         {
             _context = context;
         }
@@ -122,16 +122,16 @@ namespace Officemancer.Services
                 if (res.OfficeID < 1 || res.FloorID < 1 || res.BookerID < 1)
                     return "ID not correct";
 
-                if ((res.MancerIds == null || res.MancerIds.Count < 1) && !res.MancerIds.Contains(res.BookerID))
+                if ((res.UserIds == null || res.UserIds.Count < 1) && !res.UserIds.Contains(res.BookerID))
                 {
-                    res.MancerIds = new List<int>();
-                    res.MancerIds.Add(res.BookerID);
+                    res.UserIds = new List<int>();
+                    res.UserIds.Add(res.BookerID);
                 }
 
-                if (isFloorFull(res.OfficeID, res.FloorID, res.MancerIds.Count, res.Date))
+                if (IsFloorFull(res.OfficeID, res.FloorID, res.UserIds.Count, res.Date))
                     return "Not enough room on this floor for all reservations";
 
-                foreach (int u in res.MancerIds)
+                foreach (int u in res.UserIds)
                 {
                     Reservation r = new Reservation
                     {
@@ -161,7 +161,7 @@ namespace Officemancer.Services
                 return "bad model";
         }
 
-        private bool isFloorFull(int officeid, int floorid, int reservations, DateTime date)
+        private bool IsFloorFull(int officeid, int floorid, int reservations, DateTime date)
         {
             var floor = _context.Floors.Where(x => x.FloorID == floorid).FirstOrDefault();
             if (floor.Bookable && (floor.MaxCapacity - reservations) > GetReservations(officeid, date, floorid).Count)
@@ -200,7 +200,7 @@ namespace Officemancer.Services
 
                 _context.SaveChanges();
 
-                foreach(int userId in resDto.MancerIds)
+                foreach(int userId in resDto.UserIds)
                 {
                     //Check if a new user is added
                     bool ifUserExist = userReservations.Any(item => item.UserID.Equals(userId));
@@ -219,7 +219,7 @@ namespace Officemancer.Services
 
                 }
                     //check if user needs to be deleted
-                    List<UserReservation> toBeDeleted = userReservations.Where(userRes => !resDto.MancerIds.Any(mancerId => userRes.UserID == mancerId)).ToList();
+                    List<UserReservation> toBeDeleted = userReservations.Where(userRes => !resDto.UserIds.Any(mancerId => userRes.UserID == mancerId)).ToList();
                     foreach(UserReservation userToDelete in toBeDeleted)
                     {
                         _context.UserReservations.Remove(userToDelete);

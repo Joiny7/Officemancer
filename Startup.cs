@@ -16,10 +16,10 @@ using Microsoft.Extensions.PlatformAbstractions;
 using Ninject;
 using Ninject.Activation;
 using Ninject.Infrastructure.Disposal;
-using Officemancer.Services;
+using Platypus.Services;
 using Swashbuckle.AspNetCore.Swagger;
 
-namespace Officemancer
+namespace Platypus
 {
     public class Startup
     {
@@ -56,17 +56,17 @@ namespace Officemancer
                                   builder =>
                                   {
                                       builder.WithOrigins("https://localhost:44391",
-                                                          "https://officemancer.azurewebsites.net");
+                                                          "https://Platypus.azurewebsites.net");
                                   });
             });
             //services.AddControllers();
             services.AddSwaggerGen();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-            services.AddDbContext<MancerContext>(options =>
+            services.AddDbContext<PlatypusContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("MancerDBConnectionString")));
 
-            services.AddScoped<MancerContext>();
+            services.AddScoped<PlatypusContext>();
             services.AddScoped<IAdminService, AdminService>();
             services.AddScoped<IUserService,UserService>();
             

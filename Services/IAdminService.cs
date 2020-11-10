@@ -1,11 +1,11 @@
-﻿using Officemancer.Dtos;
-using Officemancer.Models;
+﻿using Platypus.Dtos;
+using Platypus.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Officemancer.Services
+namespace Platypus.Services
 {
     public interface IAdminService
     {

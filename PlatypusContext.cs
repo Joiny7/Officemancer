@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Officemancer.Models;
+using Platypus.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Officemancer
+namespace Platypus
 {
-    public class MancerContext : DbContext
+    public class PlatypusContext : DbContext
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Company> Companies { get; set; }
@@ -18,6 +18,6 @@ namespace Officemancer
         public DbSet<UserReservation> UserReservations { get; set; }
         public DbSet<Warning> Warnings { get; set; }
 
-        public MancerContext(DbContextOptions<MancerContext> options) : base(options) { }
+        public PlatypusContext(DbContextOptions<PlatypusContext> options) : base(options) { }
     }
 }

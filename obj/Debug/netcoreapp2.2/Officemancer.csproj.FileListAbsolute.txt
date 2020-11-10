@@ -99,3 +99,4 @@ C:\Devops\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.dll
 C:\Devops\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.pdb
 C:\Devops\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.genruntimeconfig.cache
 C:\Devops\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.csproj.CopyComplete
+E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Officemancer.csprojAssemblyReference.cache

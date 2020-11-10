@@ -1,6 +1,6 @@
 using System;
 
-namespace Officemancer.Models
+namespace Platypus.Models
 {
     public class ErrorViewModel
     {

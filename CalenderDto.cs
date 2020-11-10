@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Officemancer.Dtos
+namespace Platypus.Dtos
 {
     public class CalenderDto
     {
@@ -31,6 +31,6 @@ namespace Officemancer.Dtos
     {
         public int FloorID { get; set; }
         public DateTime Date { get; set; }
-        public List<int> MancerIds { get; set; }
+        public List<int> UserIds { get; set; }
     }
 }

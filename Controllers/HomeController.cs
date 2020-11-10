@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Officemancer.Models;
+using Platypus.Models;
 
-namespace Officemancer.Controllers
+namespace Platypus.Controllers
 {
     public class HomeController : Controller
     {

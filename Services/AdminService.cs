@@ -1,17 +1,17 @@
-﻿using Officemancer.Dtos;
-using Officemancer.Models;
+﻿using Platypus.Dtos;
+using Platypus.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Officemancer.Services
+namespace Platypus.Services
 {
     public class AdminService : IAdminService
     {
-        private readonly MancerContext _context;
+        private readonly PlatypusContext _context;
 
-        public AdminService(MancerContext context)
+        public AdminService(PlatypusContext context)
         {
             _context = context;
         }

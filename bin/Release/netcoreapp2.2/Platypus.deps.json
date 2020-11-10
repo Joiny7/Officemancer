@@ -22,7 +22,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v2.2": {
-      "Officemancer/1.0.0": {
+      "Platypus/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
@@ -35,10 +35,10 @@
           "Swashbuckle.AspNetCore.SwaggerUI": "5.6.3"
         },
         "runtime": {
-          "Officemancer.dll": {}
+          "Platypus.dll": {}
         },
         "compile": {
-          "Officemancer.dll": {}
+          "Platypus.dll": {}
         }
       },
       "Microsoft.Bcl.AsyncInterfaces/1.0.0": {
@@ -3671,7 +3671,7 @@
     }
   },
   "libraries": {
-    "Officemancer/1.0.0": {
+    "Platypus/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

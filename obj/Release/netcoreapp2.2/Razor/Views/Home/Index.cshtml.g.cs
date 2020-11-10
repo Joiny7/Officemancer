@@ -14,17 +14,17 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #line 1 "E:\Work\Officemancer\Views\_ViewImports.cshtml"
-using Officemancer;
+using Platypus;
 
 #line default
 #line hidden
 #line 2 "E:\Work\Officemancer\Views\_ViewImports.cshtml"
-using Officemancer.Models;
+using Platypus.Models;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"80734afcc74a13c396185eae04b77892d4d38836", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"79bcf12b6ae6b33b9f6139312d15a7c7e621341f", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"405da29b893eb32afd2b28e1bf7f98f3c306e792", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/img/Sopra_Steria_logo.svg"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -65,7 +65,7 @@ using Officemancer.Models;
             WriteLiteral("\r\n<div class=\"row\" id=\"login\">\r\n    <div class=\"container\">\r\n\r\n        ");
             EndContext();
             BeginContext(116, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "80734afcc74a13c396185eae04b77892d4d388364985", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "80734afcc74a13c396185eae04b77892d4d388364977", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -85,7 +85,7 @@ using Officemancer.Models;
             WriteLiteral("\r\n\r\n        <div class=\"alert alert-danger login_feedback\">\r\n            Fel användarnamn eller lösenord\r\n        </div>\r\n\r\n        ");
             EndContext();
             BeginContext(309, 794, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "80734afcc74a13c396185eae04b77892d4d388366464", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "80734afcc74a13c396185eae04b77892d4d388366456", async() => {
                 BeginContext(331, 765, true);
                 WriteLiteral(@"
             <div class=""form-group"">

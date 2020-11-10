@@ -4,11 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Officemancer.Dtos;
-using Officemancer.Models;
-using Officemancer.Services;
+using Platypus.Dtos;
+using Platypus.Models;
+using Platypus.Services;
 
-namespace Officemancer.Controllers
+namespace Platypus.Controllers
 {
     public class UserController : Controller
     {

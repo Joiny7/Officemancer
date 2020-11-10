@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Officemancer.Models
+namespace Platypus.Models
 {
     public class Reservation
     {
@@ -14,6 +14,6 @@ namespace Officemancer.Models
         public int BookerID { get; set; }      
         public DateTime Date { get; set; }
         [NotMapped]
-        public List<int> MancerIds { get; set; }
+        public List<int> UserIds { get; set; }
     }
 }

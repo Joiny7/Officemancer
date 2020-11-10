@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Officemancer.Migrations
+namespace Platypus.Migrations
 {
     public partial class Remove_Mencer_from_Reservation : Migration
     {

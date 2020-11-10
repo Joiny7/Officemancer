@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Officemancer.Migrations
+namespace Platypus.Migrations
 {
     public partial class InitialCreate3 : Migration
     {
