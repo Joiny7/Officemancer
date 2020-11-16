@@ -4,7 +4,8 @@ import styles from './Footer.module.css';
 
 const Footer = () => (
   <div className={styles.Footer}>
-    Footer Component
+        <p>Om Platypus</p>
+        <p>Skicka feedback</p>
   </div>
 );
 

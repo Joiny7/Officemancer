@@ -1,6 +1,7 @@
 import logo from './assets/Platypus-logo.png';
 import './App.css';
-import Content from './components/Content/Content'
+import Content from './components/Content/Content';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -10,11 +11,8 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <Content></Content>
-      <footer>
-        <hr />
-        <p>Om Platypus</p>
-        <p>Skicka feedback</p>
-      </footer>
+      <Footer>
+      </Footer>
     </div>
   );
 }
