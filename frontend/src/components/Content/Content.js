@@ -11,7 +11,7 @@ const Content = () => {
   axios.post('api/User/GetMonth?officeID=1&month=11&year=2020',{}).then(response => {
     setShowDay(response.data.days);
     setShowMonth(response.data.month);
-    console.log(response.data);
+    //console.log(response.data);
   }); 
 
   Moment.locale('sv');
