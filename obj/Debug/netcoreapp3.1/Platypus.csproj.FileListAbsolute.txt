@@ -1,0 +1,6 @@
+E:\Work\Officemancer\obj\Debug\netcoreapp3.1\Platypus.csprojAssemblyReference.cache
+E:\Work\Officemancer\obj\Debug\netcoreapp3.1\Platypus.csproj.CoreCompileInputs.cache
+E:\Work\Officemancer\obj\Debug\netcoreapp3.1\Platypus.MvcApplicationPartsAssemblyInfo.cs
+E:\Work\Officemancer\obj\Debug\netcoreapp3.1\Platypus.MvcApplicationPartsAssemblyInfo.cache
+E:\Work\Officemancer\obj\Debug\netcoreapp3.1\Platypus.AssemblyInfoInputs.cache
+E:\Work\Officemancer\obj\Debug\netcoreapp3.1\Platypus.AssemblyInfo.cs

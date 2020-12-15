@@ -19,6 +19,28 @@ namespace Platypus.Services
             _context = context;
         }
 
+        public string UpdateUserData(UserDataDto dto)
+        {
+            User u = _context.Users.Where(x => x.UserID == dto.ID).FirstOrDefault();
+            MiniLogin ml = _context.Logins.Where(x => x.UserID == dto.ID).FirstOrDefault();
+
+            if (u != null && ml != null)
+            {
+                u.UserName = dto.UserName;
+                u.LastName = dto.LastName;
+                u.FirstName = dto.FirstName;
+                ml.Password = dto.Password;
+                ml.UserName = u.UserName;
+
+                _context.Update(u);
+                _context.Update(ml);
+                _context.SaveChanges();
+                return "Changes updated successfully";
+            }
+            else
+                return "Changes updated failed";
+        }
+
         public List<UserReservation> GetUserReservations(int userId)
         {
             var list = _context.UserReservations.Where(x => x.UserID == userId).ToList();
@@ -255,5 +277,4 @@ namespace Platypus.Services
             }
         }
     }
-
 }

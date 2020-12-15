@@ -31,10 +31,10 @@ namespace Platypus
             Configuration = configuration;
 
             var builder = new ConfigurationBuilder()
-    .SetBasePath(env.ContentRootPath)
-    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-    .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-    .AddEnvironmentVariables();
+            .SetBasePath(env.ContentRootPath)
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+            .AddEnvironmentVariables();
             this.Configuration = builder.Build();
         }
 
@@ -64,7 +64,7 @@ namespace Platypus
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddDbContext<PlatypusContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("MancerDBConnectionString")));
+            options.UseSqlServer(Configuration.GetConnectionString("DBConnection2")));
 
             services.AddScoped<PlatypusContext>();
             services.AddScoped<IAdminService, AdminService>();

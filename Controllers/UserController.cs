@@ -18,6 +18,17 @@ namespace Platypus.Controllers
             _userservice = userservice;
         }
 
+        [HttpPost("api/Users/UpdateUser")]
+        public IActionResult UpdateUser(UserDataDto dto)
+        {
+            string resp = _userservice.UpdateUserData(dto);
+
+            if (resp.Contains("successfully"))
+                return Ok(resp);
+            else
+                return BadRequest(resp);
+        }
+
         [HttpGet("api/Users/GetUserReservations")]
         public IActionResult GetUserReservations(int userid)
         {

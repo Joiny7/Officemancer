@@ -31,3 +31,9 @@ E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Platypus.dll
 E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Platypus.pdb
 E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Platypus.genruntimeconfig.cache
 E:\Work\Officemancer\obj\Debug\netcoreapp2.2\Platypus.csproj.CopyComplete
+E:\Work\Officemancer\bin\Debug\netcoreapp2.2\frontend\generate-react-cli.json
+E:\Work\Officemancer\bin\Debug\netcoreapp2.2\frontend\package-lock.json
+E:\Work\Officemancer\bin\Debug\netcoreapp2.2\frontend\package.json
+E:\Work\Officemancer\bin\Debug\netcoreapp2.2\frontend\public\manifest.json
+E:\Work\Officemancer\bin\Debug\netcoreapp2.2\Views\Home\build\asset-manifest.json
+E:\Work\Officemancer\bin\Debug\netcoreapp2.2\Views\Home\build\manifest.json

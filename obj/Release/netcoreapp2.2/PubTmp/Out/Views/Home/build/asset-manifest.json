@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6a643cf4.chunk.css",
+    "main.js": "/static/js/main.c70db336.chunk.js",
+    "main.js.map": "/static/js/main.c70db336.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.29e39eb4.js",
+    "runtime-main.js.map": "/static/js/runtime-main.29e39eb4.js.map",
+    "static/js/2.94084f92.chunk.js": "/static/js/2.94084f92.chunk.js",
+    "static/js/2.94084f92.chunk.js.map": "/static/js/2.94084f92.chunk.js.map",
+    "static/js/3.f01a9217.chunk.js": "/static/js/3.f01a9217.chunk.js",
+    "static/js/3.f01a9217.chunk.js.map": "/static/js/3.f01a9217.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.6a643cf4.chunk.css.map": "/static/css/main.6a643cf4.chunk.css.map",
+    "static/js/2.94084f92.chunk.js.LICENSE.txt": "/static/js/2.94084f92.chunk.js.LICENSE.txt",
+    "static/media/Platypus-logo.9caa0bc8.png": "/static/media/Platypus-logo.9caa0bc8.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.29e39eb4.js",
+    "static/js/2.94084f92.chunk.js",
+    "static/css/main.6a643cf4.chunk.css",
+    "static/js/main.c70db336.chunk.js"
+  ]
+}

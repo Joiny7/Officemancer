@@ -20,5 +20,6 @@ namespace Platypus.Services
         UserReservation GetUserReservation(int userReservationId);
         string UpdateReservation(int id, ReservationDto res);
         string DeleteReservation(int id);
+        string UpdateUserData(UserDataDto dto);
     }
 }
